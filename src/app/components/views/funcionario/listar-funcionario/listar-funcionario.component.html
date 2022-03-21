@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <h3>Funcionarios</h3>
+
+  <div class="botao">
+
+      <button routerLink="/cadastrar/funcionario/{{id_cargo}}" class="btn btn-primary">
+        Cadastrar
+      </button>
+
+      <button (click)="voltar()" class="btn btn-secondary">
+        Voltar
+      </button>
+
+
+  </div>
+
+
+  <div class="cards">
+
+
+    <div class="card fadeInDown" *ngFor="let func of funcionarios">
+      <img [src]="func.foto" class="card-img-top" alt="imagem do Colaborador">
+
+
+      <div class="codigo-img">
+        <!-- <h5 class="mb-2">Código</h5> -->
+        <p>{{ func.id_colaborador }}</p>
+      </div>
+      <div class="card-body">
+
+        <h4 class="card-title">{{ func.nome }}</h4>
+
+        <div>
+          <h5 class="mb-2">Email</h5>
+          <p>{{ func.email }}</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Cidade</h5>
+          <p>{{ func.cidade }}</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2" >Autorização</h5>
+          <p *ngFor="let role of func.role">{{ role.nome_role }}</p>
+        </div>
+
+
+
+        <div class="icoAcoes mb-2">
+
+          <p><i routerLink="/funcionario/holerite/{{func.id_colaborador}}" class="fa-solid fa-list-check"></i></p>
+
+          <p><i routerLink="/editar/funcionario/{{func.id_colaborador}}/{{id_cargo}}" class="fas fa-edit text-info"></i></p>
+
+          <p><i routerLink="/excluir/funcionario/{{func.id_colaborador}}" class="fas fa-trash-alt text-danger mx-2"></i></p>
+
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+</div>

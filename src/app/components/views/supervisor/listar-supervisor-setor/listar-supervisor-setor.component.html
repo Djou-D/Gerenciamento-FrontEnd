@@ -1,0 +1,149 @@
+<div class="container-fluid">
+  <div class="wrapper fadeInDown">
+    <h3 class="card-title">Supervisor do setor</h3>
+
+    <div class="formContent">
+      <form>
+        <div class="">
+          <label class="form-label">Supervisor do setor</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="supervisor.nome"
+            name="nome"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">Cidade do supervisor</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="supervisor.cidade"
+            name="cidade"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">CPF do supervisor</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="supervisor.cpf"
+            name="cpf"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">Email do supervisor</label>
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="supervisor.email"
+            name="email"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">Senha do supervisor</label>
+          <input
+            type="password"
+            class="form-control"
+            [(ngModel)]="supervisor.senha"
+            name="senha"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Autorização</label>
+        </div>
+
+        <div *ngFor="let role of supervisor.role">
+          <div class="mb-3 radio">
+            <input
+              type="radio"
+              class="form-check-input"
+              [value]="opcoes.opsao1"
+              [(ngModel)]="role.nome_role"
+              [checked]="true"
+              name="role"
+              id="admin"
+            />
+            <label
+              for="admin"
+              [ngClass]="{ checked: role.nome_role == opcoes.opsao1 }"
+              >Administrador</label
+            >
+          </div>
+
+          <div class="mb-3 radio">
+            <input
+              type="radio"
+              class="form-check-input"
+              [value]="opcoes.opsao2"
+              [(ngModel)]="role.nome_role"
+              [checked]="true"
+              name="role"
+              id="user"
+            />
+            <label
+              for="user"
+              [ngClass]="{ checked: role.nome_role == opcoes.opsao2 }"
+              >Usuário</label
+            >
+          </div>
+        </div>
+
+        <div *ngIf="!supervisorAtivo">
+          <select
+            class="form-select mb-3"
+            name="id_supervisor"
+            [(ngModel)]="supervisor.id_colaborador"
+            (ngModelChange)="mostrarSupervisorSemSetor()"
+          >
+            <option [ngValue]="supervisor.id_colaborador">
+              Escolha o Supervisor
+            </option>
+
+            <option
+              *ngFor="let super of supervisores"
+              [ngValue]="supervisor.id_colaborador"
+            >
+              {{ super.nome }}
+            </option>
+          </select>
+
+          <div class="botoes">
+            <button (click)="cadastrarSupervisor()" class="btn">
+              Definir Supervisor
+            </button>
+
+            <button class="btn" routerLink="/setores">Voltar</button>
+          </div>
+        </div>
+
+        <div *ngIf="supervisorAtivo">
+          <div class="">
+            <label class="form-label">Foto do Supervisor</label>
+            <input
+              type="file"
+              class="form-control"
+              name="foto"
+              [(ngModel)]="supervisor.foto"
+              (change)="subirFoto($event)"
+            />
+          </div>
+          <!--[disabled]="!supervisorCadastrado" -->
+
+          <div class="botoes">
+            <button class="btn" (click)="editarSupervisorDoSetor()">
+              Editar Supervisor
+            </button>
+
+            <button class="btn" routerLink="/setores">Voltar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

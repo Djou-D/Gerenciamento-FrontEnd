@@ -1,0 +1,54 @@
+<div class="container-fluid">
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <h3>Cadastrar novo cargo</h3>
+
+
+      <form>
+        <div class="">
+          <label class="form-label">Nome do Cargo</label>
+          <input type="text" class="form-control" name="nome_cargo" [(ngModel)]="cargo.nome_cargo">
+        </div>
+
+        <div class="">
+          <label class="form-label">Atribuição</label>
+          <input type="text" class="form-control"  name="atribuicao_cargo" [(ngModel)]="cargo.atribuicao_cargo">
+        </div>
+<!--
+        <div class="mb-3">
+          <label class="form-label">Setor do Cargo</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="cargo.id_setor"
+            name="setor"
+          />
+        </div> -->
+
+        <div class="mb-3">
+          <select class="form-select" name="setor" id="" [(ngModel)]="id_setor">
+            <option [ngValue]="id_setor" selected>Escolha o Setor</option>
+            <option *ngFor="let setores of setor" [ngValue]="setores.id_setor">
+              {{ setores.nome_setor }}
+            </option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary cad" (click)="cadastrarCargo()">Cadastrar</button>
+
+        <div class="desistir">
+
+            <button class="btn btn-secondary mx-3" type="reset">Limpar</button>
+
+            <button class="btn btn-secondary mx-3" (click)="voltar()">Voltar</button>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

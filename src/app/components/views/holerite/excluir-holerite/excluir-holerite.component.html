@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="wrapper fadeInDown">
+
+      <h3>Excluir Holerite</h3>
+
+
+      <div class="formContent">
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Código</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="holerite.codigo"
+            name="codigo"
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Data do pagamento</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="holerite.data_holerite"
+            name="data_holerite"
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Valor</label>
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="holerite.valor_holerite"
+            name="valor_holerite"
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Status</label>
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="holerite.status_holerite"
+            name="status_holerite"
+            readonly
+          />
+        </div>
+
+        <div class="botoes">
+
+          <button (click)="excluirHolerite()" class="btn btn-primary">
+            Excluir
+          </button>
+
+          <button (click)="voltar()" class="btn btn-secondary">Voltar</button>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

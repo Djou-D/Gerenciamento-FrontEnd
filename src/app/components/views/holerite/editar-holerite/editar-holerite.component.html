@@ -1,0 +1,71 @@
+<div class="container-fluid">
+
+  <div class="wrapper fadeInDown">
+
+    <h3 class="card-title">Editar Holerite</h3>
+
+    <div class="formContent">
+
+
+
+    <form>
+
+      <div class="">
+        <label class="form-label">Código</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="holerite.codigo"
+          name="codigo"
+          readonly
+        />
+      </div>
+
+      <div class="">
+        <label class="form-label">Data do pagamento</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="holerite.data_holerite"
+          name="data_holerite"
+        />
+      </div>
+
+      <div class="">
+        <label class="form-label">Valor</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="holerite.valor_holerite"
+          name="valor_holerite"
+        />
+      </div>
+
+
+      <div class="">
+        <label class="form-label">Status</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="holerite.status_holerite"
+          name="status_holerite"
+        />
+      </div>
+
+
+          <div class="botoes">
+
+            <button (click)="editarHolerite()"  class="btn">
+              Editar
+            </button>
+
+            <button  class="btn" (click)="voltar()">
+              Voltar
+            </button>
+
+          </div>
+
+    </form>
+  </div>
+</div>
+</div>

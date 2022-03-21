@@ -1,0 +1,30 @@
+<div class="container-fluid">
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <h3>Excluir Setor</h3>
+
+
+      <form>
+        <div class="mt-4">
+          <label class="form-label">Nome do Setor</label>
+          <input type="text" class="form-control" name="nome_setor" [(ngModel)]="setor.nome_setor" readonly>
+        </div>
+
+        <div class="mt-4">
+          <label class="form-label">Atribuição</label>
+          <input type="text" class="form-control"  name="atribuicao_setor" [(ngModel)]="setor.atribuicao_setor" readonly>
+        </div>
+
+        <button class="btn" (click)="excluirSetor()">Excluir</button>
+
+        <button class="btn" routerLink="/setores">Cancelar</button>
+
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

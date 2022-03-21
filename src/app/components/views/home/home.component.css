@@ -1,0 +1,146 @@
+.fundo
+{
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../../../assets/img/tecnologia.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+.card
+{
+  background-color: rgba(0, 0, 0, 0.747);
+  margin-left: 20px;
+  border-radius: 30px 60px 30px 60px;
+  width: 40%;
+  height: 70vh;
+  padding: 20px;
+
+}
+
+.card .card-body
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.card h3
+{
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  color: black;
+
+  font-size: 2.8rem;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.card h5
+{
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  color: black;
+
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+
+.botao
+{
+  position: relative;
+  top: -62%;
+  left: 30%;
+
+  width: 250px;
+}
+
+.botao button
+{
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+
+  border: none;
+  border-radius: 15px 20px 15px 20px;
+  position: relative;
+  top: 50%;
+  left: 35%;
+  min-width: 100px;
+  width: 200px;
+  height: 60px;
+
+  box-shadow: 2px 2px 0px 1px #4CA1A3;
+  transition: 0.3s ease-in-out;
+}
+
+.botao button:hover{
+  background-image: linear-gradient(to top, rebeccapurple, steelblue, turquoise);
+
+  transition: all;
+}
+
+.botao button:active{
+  box-shadow: 0 0 0 0 #4CA1A3, inset 3px 3px 3px #4CA1A3;
+  transform: translate(3px, 3px);
+  transition: all;
+}
+
+
+/* ANIMAÇÃO */
+
+.animacao
+{
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    /* transform: translate3d(0, 100%, 0); */
+    transform: translate(100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+.animacao1
+{
+  animation-name: fadeInDown1;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+
+@keyframes fadeInDown1 {
+  0% {
+    opacity: 0;
+    /* transform: translate3d(0, 100%, 0); */
+    transform: translate(0, 100%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

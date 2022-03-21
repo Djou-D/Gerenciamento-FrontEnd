@@ -1,0 +1,78 @@
+<div class="container-fluid">
+
+  <div class="wrapper fadeInDown">
+
+    <h3 class="card-title">Cadastrar Holerite</h3>
+
+    <div class="formContent">
+
+
+
+    <form>
+
+      <div class="">
+        <label class="form-label">Data do pagamento</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="holerite.data_holerite"
+          name="data_holerite"
+        />
+      </div>
+
+      <div class="">
+        <label class="form-label">Valor</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="holerite.valor_holerite"
+          name="valor_holerite"
+        />
+      </div>
+
+
+      <!-- <div class="">
+        <label class="form-label">Status</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="holerite.status_holerite"
+          name="status_holerite"
+        />
+      </div> -->
+
+
+      <div class="mb-3">
+        <select class="form-select" name="status" id="" [(ngModel)]="holerite.status_holerite">
+
+          <option value="PENDENTE" selected>
+            PENDENTE
+          </option>
+
+          <option value="PAGO">
+            PAGO
+          </option>
+
+          <option value="CANCELADO">
+            CANCELADO
+          </option>
+        </select>
+      </div>
+
+
+          <div class="botoes">
+
+            <button (click)="cadastrarHolerite()"  class="btn">
+              Cadastrar
+            </button>
+
+            <button  class="btn" (click)="voltar()">
+              Voltar
+            </button>
+
+          </div>
+
+    </form>
+  </div>
+</div>
+</div>

@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <h3>Supervisor e Setor</h3>
+
+  <div class="botao">
+    <button routerLink="/cadastrar/setor" class="btn btn-primary">
+      Cadastrar Setor
+    </button>
+
+    <button routerLink="/supervisores" class="btn btn-primary">
+      Supervisores
+    </button>
+  </div>
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="card" *ngFor="let setor of setor">
+        <div class="card-body">
+          <div>
+            <h5 class="mb-2">Supervisor</h5>
+
+            <p>{{ setor.nome }}</p>
+          </div>
+
+          <div>
+            <h5 class="mb-2">Email</h5>
+            <p>{{ setor.email }}</p>
+          </div>
+
+          <div>
+            <h5 class="mb-2">Setor</h5>
+            <p>{{ setor.nome_setor }}</p>
+          </div>
+
+          <div class="atribuicao">
+            <h5 class="mb-2">Atribuição</h5>
+            <p>{{ setor.atribuicao_setor }}</p>
+          </div>
+
+          <div class="icoAcoes">
+            <p>
+              <i
+                class="fa-solid fa-cubes"
+                routerLink="/cargos/setor/{{ setor.id_setor }}"
+                title="Cargos"
+              ></i>
+            </p>
+
+            <p>
+              <i
+                class="fa-solid fa-user-gear"
+                routerLink="/supervisor/setor/{{ setor.id_setor }}"
+                title="Supervisor"
+              ></i>
+            </p>
+
+            <p>
+              <i
+                class="fas fa-edit text-info"
+                routerLink="/editar/setor/{{ setor.id_setor }}"
+                title="Editar"
+              ></i>
+            </p>
+
+            <p>
+              <i
+                class="fas fa-trash-alt text-danger"
+                routerLink="/excluir/setor/{{ setor.id_setor }}"
+                title="Excluir"
+              ></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

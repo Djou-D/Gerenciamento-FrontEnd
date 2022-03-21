@@ -1,0 +1,231 @@
+<div class="container-fluid">
+  <h3>Holerites {{super.nome}}</h3>
+
+  <div class="botao">
+
+      <button routerLink="/cadastrar/holerite/" class="btn btn-primary">
+        Cadastrar
+      </button>
+
+      <button routerLink="/supervisores" class="btn btn-secondary">
+        Voltar
+      </button>
+
+
+  </div>
+
+
+  <div class="cards">
+
+
+    <div class="card fadeInDown" *ngFor="let holerite of holerites">
+
+
+      <div class="card-body">
+
+        <div class="codigo-img">
+          <h5 class="mb-2">Código</h5>
+          <p>{{ holerite.codigo }}</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Data</h5>
+          <p>{{ holerite.data_holerite | date : 'dd/MM/yyyy'}}</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Valor</h5>
+          <p>{{ holerite.valor_holerite | currency:'BRL'}}</p>
+        </div>
+
+        <div >
+          <h5 class="mb-2">Status</h5>
+          <p>{{ holerite.status_holerite }}</p>
+        </div>
+
+
+
+        <div class="icoAcoes mb-2">
+
+          <p><i (click)="editarStatusCancelado()"class="fa-solid fa-ban" title="editar cancelado"></i></p>
+
+          <p><i (click)="editarStatusPago()" class="fa-solid fa-hand-holding-dollar" title="editar pago"></i></p>
+
+          <p><i routerLink="/editar/holerite/{{holerite.codigo}}/{{super.id_colaborador}}" class="fas fa-edit text-info" title="editar"></i></p>
+
+          <p><i routerLink="/excluir/holerite/{{holerite.codigo}}/{{super.id_colaborador}}" class="fas fa-trash-alt text-danger mx-2" title="excluir"></i></p>
+
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+<!--
+<div class="container-fluid">
+  <h3>Holerites Dionatam Lima</h3>
+
+  <div class="botao">
+
+      <button routerLink="/cadastrar/holerite/" class="btn btn-primary">
+        Cadastrar
+      </button>
+
+      <button routerLink="/supervisores" class="btn btn-secondary">
+        Voltar
+      </button>
+
+
+  </div>
+
+
+  <div class="cards">
+
+
+    <div class="card fadeInDown">
+
+
+      <div class="card-body">
+
+        <div class="codigo-img">
+          <h5 class="mb-2">Código</h5>
+          <p>2</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Data</h5>
+          <p>12/12/2022</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Valor</h5>
+          <p>5.000</p>
+        </div>
+
+        <div >
+          <h5 class="mb-2">Status</h5>
+          <p>Pago</p>
+        </div>
+
+
+          <div class="icoAcoes mb-2">
+
+          <p><i (click)="editarStatusCancelado()"class="fa-solid fa-ban" title="editar cancelado"></i></p>
+
+          <p><i (click)="editarStatusPago()" class="fa-solid fa-hand-holding-dollar" title="editar pago"></i></p>
+
+          <p><i routerLink="/editar/holerite/" class="fas fa-edit text-info" title="editar"></i></p>
+
+          <p><i routerLink="/excluir/holerite/" class="fas fa-trash-alt text-danger mx-2" title="excluir"></i></p>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="card fadeInDown">
+
+
+      <div class="card-body">
+
+        <div class="codigo-img">
+          <h5 class="mb-2">Código</h5>
+          <p>2</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Data</h5>
+          <p>12/12/2022</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Valor</h5>
+          <p>5.000</p>
+        </div>
+
+        <div >
+          <h5 class="mb-2">Status</h5>
+          <p>Pago</p>
+        </div>
+
+
+          <div class="icoAcoes mb-2">
+
+          <p><i (click)="editarStatusCancelado()"class="fa-solid fa-ban" title="editar cancelado"></i></p>
+
+          <p><i (click)="editarStatusPago()" class="fa-solid fa-hand-holding-dollar" title="editar pago"></i></p>
+
+          <p><i routerLink="/editar/holerite/" class="fas fa-edit text-info" title="editar"></i></p>
+
+          <p><i routerLink="/excluir/holerite/" class="fas fa-trash-alt text-danger mx-2" title="excluir"></i></p>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <div class="card">
+
+
+      <div class="card-body">
+
+        <div class="codigo-img">
+          <h5 class="mb-2">Código</h5>
+          <p>2</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Data</h5>
+          <p>12/12/2022</p>
+        </div>
+
+        <div>
+          <h5 class="mb-2">Valor</h5>
+          <p>5.000</p>
+        </div>
+
+        <div >
+          <h5 class="mb-2">Status</h5>
+          <p>Pago</p>
+        </div>
+
+
+          <div class="icoAcoes mb-2">
+
+          <p><i (click)="editarStatusCancelado()"class="fa-solid fa-ban" title="editar cancelado"></i></p>
+
+          <p><i (click)="editarStatusPago()" class="fa-solid fa-hand-holding-dollar" title="editar pago"></i></p>
+
+          <p><i routerLink="/editar/holerite/" class="fas fa-edit text-info" title="editar"></i></p>
+
+          <p><i routerLink="/excluir/holerite/" class="fas fa-trash-alt text-danger mx-2" title="excluir"></i></p>
+
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+div h5
+{
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  color: black;
+
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.1;
+
+  padding: 15px 0 8px 0;
+}
+
+div .navbar
+{
+  display: flex;
+  justify-content: center;
+}

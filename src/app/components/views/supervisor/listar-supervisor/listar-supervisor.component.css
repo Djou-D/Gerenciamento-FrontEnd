@@ -1,0 +1,177 @@
+i
+{
+  cursor: pointer;
+}
+
+
+h3
+{
+  margin: 20px;
+  color: rgb(151, 144, 144);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+
+h4
+{
+  color: rgb(141, 137, 137);
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: -50px;
+}
+
+
+h5
+{
+  color: rgb(121, 118, 118);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+p
+{
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.container-fluid
+{
+  height: 200vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 20px;
+  background-image: url(../../../../../assets/img/bacground.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+
+}
+
+.cards
+{
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card
+{
+  width: 30%;
+  background: rgb(49, 45, 45);
+  border: nome;
+  border-radius: 30px 10px 30px 10px;
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+}
+
+.card img
+{
+  border-radius: 30px 10px 0 0;
+}
+
+.codigo-img
+{
+  position: relative;
+  top: -6%;
+  left: 2%;
+}
+
+
+
+
+.botao
+{
+
+  display: flex;
+  gap: 2rem;
+
+ position: absolute;
+ left: 0;
+}
+
+.botao button
+{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  text-transform: uppercase;
+
+  color: rgb(224, 219, 219);
+
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+
+  border: none;
+  border-radius: 20px;
+  position: relative;
+  top: 50%;
+  left: 35%;
+  min-width: 100px;
+  width: 200px;
+  height: 60px;
+
+  box-shadow: 2px 2px 0px 1px #4CA1A3;
+  transition: all 0.3s ease-in-out;
+}
+
+.botao button:hover{
+  background-image: linear-gradient(to top, rgb(112, 72, 151), steelblue, turquoise);
+
+  transition: all;
+  color: rgb(255, 255, 255);
+}
+
+.botao button:active{
+  box-shadow: 0 0 0 0 #4CA1A3, inset 3px 3px 3px #4CA1A3;
+  transform: translate(3px, 3px);
+  transition: all;
+}
+
+.icoAcoes
+{
+  display: flex;
+  justify-content: space-around;
+  /* width: 20%; */
+}
+
+
+
+/* ANIMAÇÃO */
+
+.fadeInDown {
+
+  animation-name: fadeInDown;
+
+  animation-duration: 1s;
+
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}

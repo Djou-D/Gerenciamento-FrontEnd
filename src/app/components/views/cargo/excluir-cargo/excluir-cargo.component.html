@@ -1,0 +1,30 @@
+<div class="container-fluid">
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <h3>Excluir cargo</h3>
+
+      <form>
+        <div class="">
+          <label class="form-label">Nome do Cargo</label>
+          <input type="text" class="form-control" name="nome_cargo" [(ngModel)]="cargo.nome_cargo" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Atribuição</label>
+          <input type="text" class="form-control"  name="atribuicao_cargo" [(ngModel)]="cargo.atribuicao_cargo" readonly>
+        </div>
+
+
+        <button class="btn" (click)="excluirCargo()">Excluir</button>
+
+        <button class="btn" (click)="voltar()">Cancelar</button>
+
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

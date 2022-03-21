@@ -1,0 +1,147 @@
+<div class="container-fluid">
+  <div class="wrapper fadeInDown">
+    <h3 class="card-title">Editar Funcionaro</h3>
+
+    <div class="formContent">
+      <form>
+        <div class="">
+          <label class="form-label">Funcionario</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="func.nome"
+            name="nome"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">Cidade do funcionario</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="func.cidade"
+            name="cidade"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">CPF do funcionario</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="func.cpf"
+            name="cpf"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">Email do funcionario</label>
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="func.email"
+            name="email"
+          />
+        </div>
+
+        <div class="">
+          <label class="form-label">Senha do funcionario</label>
+          <input
+            type="password"
+            class="form-control"
+            [(ngModel)]="func.senha"
+            name="senha"
+          />
+        </div>
+
+
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Autorização</label>
+        </div>
+
+        <div *ngFor="let role of func.role">
+          <div class="mb-3 radio">
+            <input
+              type="radio"
+              class="form-check-input"
+              [value]="opcoes.opsao1"
+              [(ngModel)]="role.nome_role"
+              [checked]="true"
+              name="role"
+              id="admin"
+            />
+            <label
+              for="admin"
+              [ngClass]="{ checked: role.nome_role == opcoes.opsao1 }"
+              >Administrador</label
+            >
+          </div>
+
+          <div class="mb-3 radio">
+            <input
+              type="radio"
+              class="form-check-input"
+              [value]="opcoes.opsao2"
+              [(ngModel)]="role.nome_role"
+              [checked]="true"
+              name="role"
+              id="user"
+            />
+            <label
+              for="user"
+              [ngClass]="{ checked: role.nome_role == opcoes.opsao2 }"
+              >Usuário</label
+            >
+          </div>
+        </div>
+
+
+
+        <div class="">
+          <label class="form-label">Foto do funcionario</label>
+          <input
+            type="file"
+            class="form-control"
+            name="foto"
+            (change)="subirFoto($event)"
+            [(ngModel)]="func.foto"
+          />
+        </div>
+
+
+
+        <!-- <div class="">
+          <label class="form-label">Código do Cargo</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="id_cargo"
+            name="cargo"
+          />
+        </div> -->
+
+        <div class="mb-3">
+          <select class="form-select" name="cargo" id="" [(ngModel)]="id_cargo">
+            <option [ngValue]="id_cargo" selected>
+              {{cargo.id_cargo}} {{ cargo.nome_cargo }}
+            </option>
+            <option *ngFor="let cargo of cargos" [ngValue]="cargo.id_cargo">
+              {{cargo.id_cargo}}-{{ cargo.nome_cargo }}
+            </option>
+          </select>
+        </div>
+
+
+
+
+
+        <div class="botoes">
+          <button (click)="editarFunc()" class="btn">Editar</button>
+
+          <button class="btn" (click)="voltar()">Voltar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

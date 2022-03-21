@@ -1,0 +1,35 @@
+<div class="container-fluid">
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+
+      <h3>Cadastrar novo setor</h3>
+
+
+      <form>
+        <div class="mt-3">
+          <label class="form-label">Nome do Setor</label>
+          <input type="text" class="form-control" name="nome_setor" [(ngModel)]="setor.nome_setor">
+        </div>
+
+        <div class="mt-3">
+          <label class="form-label">Atribuição</label>
+          <input type="text" class="form-control"  name="atribuicao_setor" [(ngModel)]="setor.atribuicao_setor">
+        </div>
+
+        <button class="btn cad" (click)="cadastrarSetor()">Cadastrar</button>
+
+        <div class="desistir">
+
+            <button class="btn mx-3" type="reset">Limpar</button>
+
+            <button class="btn mx-3" routerLink="/setores">Voltar</button>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

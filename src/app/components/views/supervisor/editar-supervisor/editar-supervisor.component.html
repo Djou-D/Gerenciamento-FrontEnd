@@ -1,0 +1,151 @@
+<div class="container-fluid">
+
+  <div class="wrapper fadeInDown">
+
+    <h3 class="card-title">Editar Supervisor</h3>
+
+    <div class="formContent">
+
+
+
+    <form>
+
+      <div class="">
+        <label class="form-label">Supervisor</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="super.nome"
+          name="nome"
+        />
+      </div>
+
+      <div class="">
+        <label class="form-label">Cidade do supervisor</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="super.cidade"
+          name="cidade"
+        />
+      </div>
+
+      <div class="">
+        <label class="form-label">CPF do supervisor</label>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="super.cpf"
+          name="cpf"
+        />
+      </div>
+
+
+      <div class="">
+        <label class="form-label">Email do supervisor</label>
+        <input
+          type="email"
+          class="form-control"
+          [(ngModel)]="super.email"
+          name="email"
+        />
+      </div>
+
+      <div class="">
+        <label class="form-label">Senha do supervisor</label>
+        <input
+          type="password"
+          class="form-control"
+          [(ngModel)]="super.senha"
+          name="senha"
+        />
+      </div>
+
+
+        <div class="mb-3" >
+          <label for="role" class="form-label">Autorização</label>
+        </div>
+
+        <div *ngFor="let role of super.role">
+          <div class="mb-3 radio">
+            <input
+              type="radio"
+              class="form-check-input"
+              [value]="opcoes.opsao1"
+              [(ngModel)]="role.nome_role"
+              [checked]="true"
+              name="role"
+              id="admin"
+            />
+            <label
+              for="admin"
+              [ngClass]="{ checked: role.nome_role == opcoes.opsao1 }"
+              >Administrador</label
+            >
+          </div>
+
+          <div class="mb-3 radio">
+            <input
+              type="radio"
+              class="form-check-input"
+              [value]="opcoes.opsao2"
+              [(ngModel)]="role.nome_role"
+              [checked]="true"
+              name="role"
+              id="user"
+            />
+            <label
+              for="user"
+              [ngClass]="{ checked: role.nome_role == opcoes.opsao2 }"
+              >Usuário</label
+            >
+          </div>
+        </div>
+
+
+
+      <div class="">
+        <label class="form-label">Foto do Supervisor</label>
+        <input type="file" class="form-control"  name="foto" (change)="subirFoto($event)">
+      </div>
+
+
+        <!-- <div class="">
+          <label class="form-label">Código do Setor</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="super.id_setor"
+            name="setor"
+          />
+        </div> -->
+
+        <div class="mb-3">
+          <select class="form-select" name="cargo" id="" [(ngModel)]="id_setor">
+            <option [ngValue]="id_setor" selected>
+              {{ setor.id_setor }} {{ setor.nome_setor }}
+            </option>
+            <option *ngFor="let set of setores" [ngValue]="set.id_setor">
+              {{set.id_setor}}-{{ setor.nome_setor }}
+            </option>
+          </select>
+        </div>
+
+
+
+          <div class="botoes">
+
+            <button (click)="editarSupervisor()"  class="btn">
+              Editar
+            </button>
+
+            <button  class="btn" routerLink="/supervisores">
+              Voltar
+            </button>
+
+          </div>
+
+    </form>
+  </div>
+</div>
+</div>

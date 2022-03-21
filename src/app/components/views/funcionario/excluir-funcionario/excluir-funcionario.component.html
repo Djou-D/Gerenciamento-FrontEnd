@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="wrapper fadeInDown">
+
+      <h3>Excluir Funcionario</h3>
+
+
+      <div class="formContent">
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="func.nome"
+            name="nome"
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">CPF</label>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="func.cpf"
+            name="cpf"
+            readonly
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            [(ngModel)]="func.email"
+            name="email"
+            readonly
+          />
+        </div>
+
+        <div class="botoes">
+
+          <button (click)="excluirFunc()" class="btn btn-primary">
+            Excluir
+          </button>
+
+          <button (click)="voltar()" class="btn btn-secondary">Voltar</button>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
